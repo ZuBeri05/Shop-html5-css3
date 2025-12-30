@@ -1,0 +1,133 @@
+/* ============================================
+   style-shop.css - 商城页面样式
+   ============================================ */ /* CSS多行注释：文件说明 */
+
+/* ----- 商城头部 ----- */ /* CSS多行注释：商城头部样式说明 */
+.shop-header { /* 商城头部类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    justify-content: space-between; /* 设置主轴对齐方式为两端对齐 */
+    align-items: center; /* 设置交叉轴对齐方式为居中 */
+    margin: 30px 0; /* 设置上下外边距为30像素，左右为0 */
+    padding-bottom: 20px; /* 设置底部内边距为20像素 */
+    border-bottom: 1px solid #eee; /* 设置底部边框为1像素实线浅灰色 */
+} /* 商城头部类样式结束 */
+
+.search-input { /* 搜索输入框类选择器 */
+    padding: 10px 15px; /* 设置内边距上下10像素，左右15像素 */
+    border: 1px solid #ddd; /* 设置边框为1像素实线浅灰色 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+    width: 250px; /* 设置宽度为250像素 */
+    font-size: 14px; /* 设置字体大小为14像素 */
+} /* 搜索输入框类样式结束 */
+
+.search-input:focus { /* 搜索输入框焦点伪类选择器 */
+    outline: none; /* 移除默认的焦点轮廓 */
+    border-color: #ff4d4f; /* 焦点时边框颜色变为红色 */
+} /* 搜索输入框焦点样式结束 */
+
+/* ----- 视频区域 ----- */ /* CSS多行注释：视频区域样式说明 */
+.video-section { /* 视频区域类选择器 */
+    text-align: center; /* 设置文本居中对齐 */
+    margin: 30px 0; /* 设置上下外边距为30像素，左右为0 */
+} /* 视频区域类样式结束 */
+
+.video-container { /* 视频容器类选择器 */
+    max-width: 800px; /* 设置最大宽度为800像素 */
+    margin: 20px auto; /* 设置上下外边距为20像素，左右自动居中 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+    overflow: hidden; /* 设置溢出内容隐藏 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 设置阴影效果 */
+} /* 视频容器类样式结束 */
+
+.video-container video { /* 视频容器内video元素选择器 */
+    width: 100%; /* 设置宽度为100% */
+    display: block; /* 设置为块级元素 */
+} /* 视频容器内video元素样式结束 */
+
+/* ----- 商品网格 ----- */ /* CSS多行注释：商品网格样式说明 */
+.product-grid { /* 商品网格类选择器 */
+    display: grid; /* 设置为网格布局 */
+    grid-template-columns: repeat(4, 1fr); /* 设置网格列为4列，每列占1份 */
+    gap: 20px; /* 设置网格间距为20像素 */
+    margin-bottom: 40px; /* 设置底部外边距为40像素 */
+} /* 商品网格类样式结束 */
+
+/* ----- 商品卡片 ----- */ /* CSS多行注释：商品卡片样式说明 */
+.product-card { /* 商品卡片类选择器 */
+    background: white; /* 设置背景颜色为白色 */
+    border: 1px solid #eee; /* 设置边框为1像素实线浅灰色 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+    overflow: hidden; /* 设置溢出内容隐藏 */
+} /* 商品卡片类样式结束 */
+
+.product-card:hover { /* 商品卡片悬停伪类选择器 */
+    border-color: #ff4d4f; /* 悬停时边框颜色变为红色 */
+    box-shadow: 0 4px 15px rgba(255,77,79,0.2); /* 悬停时添加红色阴影效果 */
+} /* 商品卡片悬停样式结束 */
+
+.card-img { /* 卡片图片类选择器 */
+    width: 100%; /* 设置宽度为100% */
+    height: 200px; /* 设置高度为200像素 */
+    object-fit: cover; /* 设置图片填充方式为覆盖，保持比例 */
+} /* 卡片图片类样式结束 */
+
+.card-body { /* 卡片主体类选择器 */
+    padding: 15px; /* 设置内边距为15像素 */
+} /* 卡片主体类样式结束 */
+
+.card-title { /* 卡片标题类选择器 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+    color: #333; /* 设置字体颜色为深灰色 */
+    display: block; /* 设置为块级元素 */
+    margin-bottom: 10px; /* 设置底部外边距为10像素 */
+} /* 卡片标题类样式结束 */
+
+.card-bottom { /* 卡片底部类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    justify-content: space-between; /* 设置主轴对齐方式为两端对齐 */
+    align-items: center; /* 设置交叉轴对齐方式为居中 */
+} /* 卡片底部类样式结束 */
+
+.card-price { /* 卡片价格类选择器 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-size: 18px; /* 设置字体大小为18像素 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+} /* 卡片价格类样式结束 */
+
+.card-btn { /* 卡片按钮类选择器 */
+    background: #ff4d4f; /* 设置背景颜色为红色 */
+    color: white; /* 设置字体颜色为白色 */
+    border: none; /* 移除边框 */
+    padding: 5px 12px; /* 设置内边距上下5像素，左右12像素 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+    cursor: pointer; /* 设置鼠标指针为手型 */
+    font-size: 13px; /* 设置字体大小为13像素 */
+} /* 卡片按钮类样式结束 */
+
+.card-btn:hover { /* 卡片按钮悬停伪类选择器 */
+    background: #ff7a45; /* 悬停时背景颜色变为橙红色 */
+} /* 卡片按钮悬停样式结束 */
+
+.category-tag { /* 分类标签类选择器 */
+    display: inline-block; /* 设置为行内块元素 */
+    background: #fff5f5; /* 设置背景颜色为浅粉色 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-size: 12px; /* 设置字体大小为12像素 */
+    padding: 2px 8px; /* 设置内边距上下2像素，左右8像素 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+    margin-bottom: 8px; /* 设置底部外边距为8像素 */
+} /* 分类标签类样式结束 */
+
+/* ----- 响应式 ----- */ /* CSS多行注释：响应式样式说明 */
+@media (max-width: 768px) { /* 媒体查询，当屏幕宽度小于等于768像素时应用以下样式 */
+    .product-grid { /* 商品网格类选择器 */
+        grid-template-columns: repeat(2, 1fr); /* 在小屏幕上设置网格列为2列 */
+    } /* 商品网格类样式结束 */
+    .shop-header { /* 商城头部类选择器 */
+        flex-direction: column; /* 设置弹性盒子方向为垂直 */
+        gap: 15px; /* 设置子元素间距为15像素 */
+    } /* 商城头部类样式结束 */
+    .search-input { /* 搜索输入框类选择器 */
+        width: 100%; /* 在小屏幕上设置宽度为100% */
+    } /* 搜索输入框类样式结束 */
+} /* 媒体查询结束 */

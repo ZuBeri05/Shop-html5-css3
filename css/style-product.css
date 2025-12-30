@@ -1,0 +1,91 @@
+/* ============================================
+   style-product.css - 商品详情页样式
+   ============================================ */ /* CSS多行注释：文件说明 */
+
+.back-link { /* 返回链接类选择器 */
+    display: inline-block; /* 设置为行内块元素 */
+    margin: 20px 0; /* 设置上下外边距为20像素，左右为0 */
+    color: #666; /* 设置字体颜色为灰色 */
+} /* 返回链接类样式结束 */
+
+.detail-box { /* 详情框类选择器 */
+    background: white; /* 设置背景颜色为白色 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+    display: flex; /* 设置为弹性盒子布局 */
+    overflow: hidden; /* 设置溢出内容隐藏 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 设置阴影效果 */
+} /* 详情框类样式结束 */
+
+.detail-left { /* 详情左侧类选择器 */
+    width: 50%; /* 设置宽度为50% */
+    background: #f9f9f9; /* 设置背景颜色为浅灰色 */
+} /* 详情左侧类样式结束 */
+
+.detail-img { /* 详情图片类选择器 */
+    width: 100%; /* 设置宽度为100% */
+    height: 100%; /* 设置高度为100% */
+    object-fit: cover; /* 设置图片填充方式为覆盖，保持比例 */
+} /* 详情图片类样式结束 */
+
+.detail-video { /* 详情视频类选择器 */
+    width: 100%; /* 设置宽度为100% */
+    height: 350px; /* 设置高度为350像素 */
+    object-fit: contain; /* 设置视频填充方式为包含，保持比例 */
+    background: #000; /* 设置背景颜色为黑色 */
+} /* 详情视频类样式结束 */
+
+.detail-right { /* 详情右侧类选择器 */
+    width: 50%; /* 设置宽度为50% */
+    padding: 40px; /* 设置内边距为40像素 */
+} /* 详情右侧类样式结束 */
+
+.product-cat { /* 商品分类类选择器 */
+    display: inline-block; /* 设置为行内块元素 */
+    background: #fff5f5; /* 设置背景颜色为浅粉色 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-size: 12px; /* 设置字体大小为12像素 */
+    padding: 4px 12px; /* 设置内边距上下4像素，左右12像素 */
+    border-radius: 20px; /* 设置圆角半径为20像素，形成胶囊形状 */
+    margin-bottom: 15px; /* 设置底部外边距为15像素 */
+} /* 商品分类类样式结束 */
+
+.product-title { /* 商品标题类选择器 */
+    font-size: 28px; /* 设置字体大小为28像素 */
+    margin-bottom: 15px; /* 设置底部外边距为15像素 */
+} /* 商品标题类样式结束 */
+
+.product-rating { /* 商品评分类选择器 */
+    color: #faad14; /* 设置字体颜色为金黄色 */
+    margin-bottom: 20px; /* 设置底部外边距为20像素 */
+} /* 商品评分类样式结束 */
+
+.product-desc { /* 商品描述类选择器 */
+    color: #666; /* 设置字体颜色为灰色 */
+    margin-bottom: 30px; /* 设置底部外边距为30像素 */
+    line-height: 1.8; /* 设置行高为1.8倍，提高可读性 */
+} /* 商品描述类样式结束 */
+
+.price-box { /* 价格框类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    justify-content: space-between; /* 设置主轴对齐方式为两端对齐 */
+    align-items: center; /* 设置交叉轴对齐方式为居中 */
+    border-top: 1px solid #eee; /* 设置顶部边框为1像素实线浅灰色 */
+    padding-top: 20px; /* 设置顶部内边距为20像素 */
+} /* 价格框类样式结束 */
+
+.detail-price { /* 详情价格类选择器 */
+    font-size: 32px; /* 设置字体大小为32像素 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+} /* 详情价格类样式结束 */
+
+/* ----- 响应式 ----- */ /* CSS多行注释：响应式样式说明 */
+@media (max-width: 768px) { /* 媒体查询，当屏幕宽度小于等于768像素时应用以下样式 */
+    .detail-box { /* 详情框类选择器 */
+        flex-direction: column; /* 设置弹性盒子方向为垂直 */
+    } /* 详情框类样式结束 */
+    .detail-left, /* 详情左侧类选择器 */
+    .detail-right { /* 详情右侧类选择器 */
+        width: 100%; /* 在小屏幕上设置宽度为100% */
+    } /* 详情左右侧类样式结束 */
+} /* 媒体查询结束 */

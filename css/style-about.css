@@ -1,0 +1,101 @@
+/* ============================================
+   style-about.css - 关于我们页面样式
+   ============================================ */ /* CSS多行注释：文件说明 */
+
+.about-header { /* 关于我们头部类选择器 */
+    text-align: center; /* 设置文本居中对齐 */
+    padding: 60px 20px; /* 设置内边距上下60像素，左右20像素 */
+    background: white; /* 设置背景颜色为白色 */
+    margin: 20px 0; /* 设置上下外边距为20像素，左右为0 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+} /* 关于我们头部类样式结束 */
+
+.about-title { /* 关于我们标题类选择器 */
+    font-size: 32px; /* 设置字体大小为32像素 */
+    margin-bottom: 15px; /* 设置底部外边距为15像素 */
+} /* 关于我们标题类样式结束 */
+
+.about-text { /* 关于我们文字类选择器 */
+    color: #666; /* 设置字体颜色为灰色 */
+    max-width: 600px; /* 设置最大宽度为600像素 */
+    margin: 0 auto; /* 设置上下外边距为0，左右自动居中 */
+} /* 关于我们文字类样式结束 */
+
+.stats-row { /* 统计数据行类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    justify-content: space-between; /* 设置主轴对齐方式为两端对齐 */
+    gap: 20px; /* 设置子元素间距为20像素 */
+    margin-bottom: 40px; /* 设置底部外边距为40像素 */
+} /* 统计数据行类样式结束 */
+
+.stat-card { /* 统计卡片类选择器 */
+    flex: 1; /* 设置弹性增长为1，平均分配空间 */
+    background: linear-gradient(135deg, #ff4d4f, #ff7a45); /* 设置背景为135度线性渐变，从红色到橙红色 */
+    color: white; /* 设置字体颜色为白色 */
+    text-align: center; /* 设置文本居中对齐 */
+    padding: 30px; /* 设置内边距为30像素 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+} /* 统计卡片类样式结束 */
+
+.stat-num { /* 统计数字类选择器 */
+    font-size: 36px; /* 设置字体大小为36像素 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+} /* 统计数字类样式结束 */
+
+.team-section { /* 团队区域类选择器 */
+    background: white; /* 设置背景颜色为白色 */
+    padding: 40px; /* 设置内边距为40像素 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+    text-align: center; /* 设置文本居中对齐 */
+} /* 团队区域类样式结束 */
+
+.team-grid { /* 团队网格类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    justify-content: center; /* 设置主轴对齐方式为居中 */
+    gap: 30px; /* 设置子元素间距为30像素 */
+    margin-top: 30px; /* 设置顶部外边距为30像素 */
+} /* 团队网格类样式结束 */
+
+.team-card { /* 团队卡片类选择器 */
+    border: 1px solid #eee; /* 设置边框为1像素实线浅灰色 */
+    padding: 30px; /* 设置内边距为30像素 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+    width: 200px; /* 设置宽度为200像素 */
+} /* 团队卡片类样式结束 */
+
+.team-card:hover { /* 团队卡片悬停伪类选择器 */
+    border-color: #ff4d4f; /* 悬停时边框颜色变为红色 */
+} /* 团队卡片悬停样式结束 */
+
+.avatar-placeholder { /* 头像占位符类选择器 */
+    width: 80px; /* 设置宽度为80像素 */
+    height: 80px; /* 设置高度为80像素 */
+    background: #fff5f5; /* 设置背景颜色为浅粉色 */
+    border-radius: 50%; /* 设置圆角半径为50%，形成圆形 */
+    margin: 0 auto 15px; /* 设置外边距上下0，左右自动居中，底部15像素 */
+    line-height: 80px; /* 设置行高为80像素，用于垂直居中文字 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-size: 24px; /* 设置字体大小为24像素 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+} /* 头像占位符类样式结束 */
+
+.member-name { /* 成员姓名类选择器 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+    margin-bottom: 5px; /* 设置底部外边距为5像素 */
+} /* 成员姓名类样式结束 */
+
+.member-id { /* 成员ID类选择器 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-size: 14px; /* 设置字体大小为14像素 */
+} /* 成员ID类样式结束 */
+
+/* ----- 响应式 ----- */ /* CSS多行注释：响应式样式说明 */
+@media (max-width: 768px) { /* 媒体查询，当屏幕宽度小于等于768像素时应用以下样式 */
+    .stats-row { /* 统计数据行类选择器 */
+        flex-direction: column; /* 设置弹性盒子方向为垂直 */
+    } /* 统计数据行类样式结束 */
+    .team-grid { /* 团队网格类选择器 */
+        flex-direction: column; /* 设置弹性盒子方向为垂直 */
+        align-items: center; /* 设置交叉轴对齐方式为居中 */
+    } /* 团队网格类样式结束 */
+} /* 媒体查询结束 */

@@ -1,0 +1,229 @@
+<!DOCTYPE html> <!-- HTML5文档类型声明，告诉浏览器这是HTML5文档 -->
+<html lang="zh-CN"> <!-- HTML根元素，lang属性指定页面语言为中文 -->
+<head> <!-- 头部区域，包含页面元数据 -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8，支持中文显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 响应式设计，设置视口宽度等于设备宽度 -->
+    <title>TechNova | 科技商城</title> <!-- 页面标题，显示在浏览器标签页 -->
+    <!-- 引用基础样式和首页样式 --> <!-- HTML注释：说明引用的CSS文件作用 -->
+    <link rel="stylesheet" href="css/style-base.css"> <!-- 引用基础样式文件，包含通用样式 -->
+    <link rel="stylesheet" href="css/style-home.css"> <!-- 引用首页专用样式文件 -->
+</head> <!-- 头部区域结束 -->
+<body> <!-- 页面主体开始 -->
+
+<!-- ========== 导航栏 ========== --> <!-- HTML注释：导航栏区域标识 -->
+<nav class="navbar"> <!-- 导航栏容器，使用navbar样式类 -->
+    <div class="container nav-content"> <!-- 导航内容容器，限制最大宽度并居中 -->
+        <!-- 网站Logo --> <!-- HTML注释：Logo区域说明 -->
+        <a href="index-simple.html" class="logo">TechNova</a> <!-- 网站Logo链接，点击返回首页 -->
+        
+        <!-- 导航菜单 --> <!-- HTML注释：导航菜单说明 -->
+        <div class="nav-menu" id="nav-menu"> <!-- 导航菜单容器，设置ID用于JavaScript控制 -->
+            <a href="index-simple.html" class="active">首页</a> <!-- 首页链接，active类表示当前页面 -->
+            <a href="shop-simple.html">商城</a> <!-- 商城页面链接 -->
+            <a href="about-simple.html">关于我们</a> <!-- 关于我们页面链接 -->
+        </div> <!-- 导航菜单容器结束 -->
+        
+        <!-- 右侧功能区 --> <!-- HTML注释：右侧功能区域说明 -->
+        <div class="nav-right"> <!-- 右侧功能区容器 -->
+            <!-- 汉堡菜单按钮 --> <!-- HTML注释：移动端菜单按钮说明 -->
+            <div class="hamburger" onclick="toggleMenu()"> <!-- 汉堡菜单按钮，点击时调用toggleMenu函数 -->
+                <span></span> <!-- 汉堡菜单第一条线 -->
+                <span></span> <!-- 汉堡菜单第二条线 -->
+                <span></span> <!-- 汉堡菜单第三条线 -->
+            </div> <!-- 汉堡菜单按钮结束 -->
+            <a href="login-simple.html">登录</a> <!-- 登录页面链接 -->
+            <a href="cart-simple.html"> <!-- 购物车页面链接 -->
+                购物车 <span class="cart-count" id="cart-count">0</span> <!-- 购物车文字和数量显示，ID用于JavaScript更新数量 -->
+            </a> <!-- 购物车链接结束 -->
+        </div> <!-- 右侧功能区容器结束 -->
+    </div> <!-- 导航内容容器结束 -->
+</nav> <!-- 导航栏容器结束 -->
+
+<header class="hero"> <!-- 页面横幅区域，使用hero样式类 -->
+    <div class="container"> <!-- 横幅内容容器，限制最大宽度 -->
+        <h1>重塑你的未来生活</h1> <!-- 主标题，一级标题标签 -->
+        <p>探索最新的智能设备，体验科技带来的无限可能</p> <!-- 副标题描述文字 -->
+        <a href="shop-simple.html" class="hero-btn">立即选购</a> <!-- 行动按钮，链接到商城页面 -->
+    </div> <!-- 横幅内容容器结束 -->
+</header> <!-- 页面横幅区域结束 -->
+
+<!-- ========== 主要内容区 ========== --> <!-- HTML注释：主要内容区域标识 -->
+<div class="container"> <!-- 主要内容容器，限制最大宽度并居中 -->
+    
+    <!-- 特色服务 (使用Flexbox布局) --> <!-- HTML注释：特色服务区域说明，标注使用的布局方式 -->
+    <div class="features"> <!-- 特色服务容器，使用Flexbox布局 -->
+        <div class="feature-item"> <!-- 第一个特色服务项目 -->
+            <div class="feature-title"> 极速配送</div> <!-- 特色服务标题 -->
+            <div class="feature-desc">24小时内发货</div> <!-- 特色服务描述 -->
+        </div> <!-- 第一个特色服务项目结束 -->
+        <div class="feature-item"> <!-- 第二个特色服务项目 -->
+            <div class="feature-title"> 两年质保</div> <!-- 特色服务标题 -->
+            <div class="feature-desc">官方正品保障</div> <!-- 特色服务描述 -->
+        </div> <!-- 第二个特色服务项目结束 -->
+        <div class="feature-item"> <!-- 第三个特色服务项目 -->
+            <div class="feature-title"> 专家支持</div> <!-- 特色服务标题 -->
+            <div class="feature-desc">7x24小时客服</div> <!-- 特色服务描述 -->
+        </div> <!-- 第三个特色服务项目结束 -->
+    </div> <!-- 特色服务容器结束 -->
+
+    <!-- 热门商品标题 --> <!-- HTML注释：热门商品区域标题 -->
+    <div class="section-center"> <!-- 标题居中容器 -->
+        <h2 class="section-title">热门商品</h2> <!-- 二级标题，热门商品区域标题 -->
+    </div> <!-- 标题居中容器结束 -->
+
+    <!-- 商品网格 (使用CSS Grid布局) --> <!-- HTML注释：商品网格区域说明，标注使用Grid布局 -->
+    <div class="product-grid"> <!-- 商品网格容器，使用CSS Grid布局显示商品 -->
+        
+        <!-- 商品卡片1 --> <!-- HTML注释：第一个商品卡片 -->
+        <div class="product-card"> <!-- 商品卡片容器 -->
+            <a href="product-1-simple.html"> <!-- 商品图片链接，点击跳转到商品详情页 -->
+                <img src="photos/1.jpg" alt="手机" class="card-img"> <!-- 商品图片，alt属性提供替代文字 -->
+            </a> <!-- 商品图片链接结束 -->
+            <div class="card-body"> <!-- 商品卡片内容区域 -->
+                <span class="category-tag">手机</span> <!-- 商品分类标签 -->
+                <a href="product-1-simple.html" class="card-title">Quantum X 智能手机</a> <!-- 商品标题链接 -->
+                <div class="card-bottom"> <!-- 商品卡片底部区域，包含价格和按钮 -->
+                    <span class="card-price">¥5,999</span> <!-- 商品价格显示 -->
+                    <button class="card-btn" onclick="addToCart(1, 'Quantum X 智能手机', 5999, '手机', 'photos/1.jpg')">加入购物车</button> <!-- 加入购物车按钮，点击时调用addToCart函数并传递商品信息 -->
+                </div> <!-- 商品卡片底部区域结束 -->
+            </div> <!-- 商品卡片内容区域结束 -->
+        </div> <!-- 商品卡片容器结束 -->
+
+        <!-- 商品卡片2 --> <!-- HTML注释：第二个商品卡片 -->
+        <div class="product-card"> <!-- 商品卡片容器 -->
+            <a href="product-2-simple.html"> <!-- 商品图片链接，点击跳转到商品详情页 -->
+                <img src="photos/2.jpg" alt="耳机" class="card-img"> <!-- 商品图片，alt属性提供替代文字 -->
+            </a> <!-- 商品图片链接结束 -->
+            <div class="card-body"> <!-- 商品卡片内容区域 -->
+                <span class="category-tag">音频</span> <!-- 商品分类标签 -->
+                <a href="product-2-simple.html" class="card-title">Nebula 无线耳机</a> <!-- 商品标题链接 -->
+                <div class="card-bottom"> <!-- 商品卡片底部区域，包含价格和按钮 -->
+                    <span class="card-price">¥1,299</span> <!-- 商品价格显示 -->
+                    <button class="card-btn" onclick="addToCart(2, 'Nebula 无线耳机', 1299, '音频', 'photos/2.jpg')">加入购物车</button> <!-- 加入购物车按钮，点击时调用addToCart函数并传递商品信息 -->
+                </div> <!-- 商品卡片底部区域结束 -->
+            </div> <!-- 商品卡片内容区域结束 -->
+        </div> <!-- 商品卡片容器结束 -->
+
+        <!-- 商品卡片3 --> <!-- HTML注释：第三个商品卡片 -->
+        <div class="product-card"> <!-- 商品卡片容器 -->
+            <a href="product-3-simple.html"> <!-- 商品图片链接，点击跳转到商品详情页 -->
+                <img src="photos/3.jpg" alt="笔记本" class="card-img"> <!-- 商品图片，alt属性提供替代文字 -->
+            </a> <!-- 商品图片链接结束 -->
+            <div class="card-body"> <!-- 商品卡片内容区域 -->
+                <span class="category-tag">电脑</span> <!-- 商品分类标签 -->
+                <a href="product-3-simple.html" class="card-title">Titan 笔记本电脑</a> <!-- 商品标题链接 -->
+                <div class="card-bottom"> <!-- 商品卡片底部区域，包含价格和按钮 -->
+                    <span class="card-price">¥12,999</span> <!-- 商品价格显示 -->
+                    <button class="card-btn" onclick="addToCart(3, 'Titan 笔记本电脑', 12999, '电脑', 'photos/3.jpg')">加入购物车</button> <!-- 加入购物车按钮，点击时调用addToCart函数并传递商品信息 -->
+                </div> <!-- 商品卡片底部区域结束 -->
+            </div> <!-- 商品卡片内容区域结束 -->
+        </div> <!-- 商品卡片容器结束 -->
+
+        <!-- 商品卡片4 --> <!-- HTML注释：第四个商品卡片 -->
+        <div class="product-card"> <!-- 商品卡片容器 -->
+            <a href="product-4-simple.html"> <!-- 商品图片链接，点击跳转到商品详情页 -->
+                <img src="photos/4.jpg" alt="相机" class="card-img"> <!-- 商品图片，alt属性提供替代文字 -->
+            </a> <!-- 商品图片链接结束 -->
+            <div class="card-body"> <!-- 商品卡片内容区域 -->
+                <span class="category-tag">摄影</span> <!-- 商品分类标签 -->
+                <a href="product-4-simple.html" class="card-title">4K 高清相机</a> <!-- 商品标题链接 -->
+                <div class="card-bottom"> <!-- 商品卡片底部区域，包含价格和按钮 -->
+                    <span class="card-price">¥8,500</span> <!-- 商品价格显示 -->
+                    <button class="card-btn" onclick="addToCart(4, '4K 高清相机', 8500, '摄影', 'photos/4.jpg')">加入购物车</button> <!-- 加入购物车按钮，点击时调用addToCart函数并传递商品信息 -->
+                </div> <!-- 商品卡片底部区域结束 -->
+            </div> <!-- 商品卡片内容区域结束 -->
+        </div> <!-- 商品卡片容器结束 -->
+
+    </div> <!-- 商品网格容器结束 -->
+
+    <!-- 查看更多按钮 --> <!-- HTML注释：查看更多按钮区域 -->
+    <div style="text-align: center; margin-bottom: 60px;"> <!-- 居中对齐的容器，设置底部外边距 -->
+        <a href="shop-simple.html" class="btn">查看所有商品</a> <!-- 查看所有商品按钮，链接到商城页面 -->
+    </div> <!-- 查看更多按钮容器结束 -->
+
+</div> <!-- 主要内容容器结束 -->
+
+<!-- ========== 页脚 ========== --> <!-- HTML注释：页脚区域标识 -->
+<footer class="footer"> <!-- 页脚容器 -->
+    <p>© 2025 TechNova 科技商城 </p> <!-- 版权信息文字 -->
+</footer> <!-- 页脚容器结束 -->
+
+<!-- 提示框容器 --> <!-- HTML注释：提示框容器说明 -->
+<div id="toast-container"></div> <!-- 提示框容器，用于显示操作提示信息，ID用于JavaScript操作 -->
+
+<!-- ========== JavaScript代码 ========== --> <!-- HTML注释：JavaScript代码区域标识 -->
+<script> /* JavaScript代码开始 */
+    // ===== 汉堡菜单切换 ===== /* JavaScript单行注释：汉堡菜单功能说明 */
+    function toggleMenu() { /* 定义汉堡菜单切换函数 */
+        var menu = document.getElementById('nav-menu'); /* 获取导航菜单元素，通过ID选择器 */
+        menu.classList.toggle('active'); /* 切换菜单的active类，用于显示/隐藏菜单 */
+    } /* 汉堡菜单切换函数结束 */
+
+    // ===== 添加商品到购物车 ===== /* JavaScript单行注释：添加购物车功能说明 */
+    function addToCart(id, name, price, category, image) { /* 定义添加商品到购物车函数，接收商品信息参数 */
+        // 从本地存储获取购物车数据 /* JavaScript单行注释：获取本地存储数据 */
+        var cart = JSON.parse(localStorage.getItem('cart')) || []; /* 从localStorage获取购物车数据，如果为空则初始化为空数组 */
+        
+        // 检查商品是否已在购物车 /* JavaScript单行注释：检查商品是否已存在 */
+        var found = false; /* 定义标志变量，用于标记是否找到相同商品 */
+        for (var i = 0; i < cart.length; i++) { /* 遍历购物车中的所有商品 */
+            if (cart[i].id === id) { /* 如果找到相同ID的商品 */
+                cart[i].quantity = cart[i].quantity + 1; /* 将该商品的数量加1 */
+                found = true; /* 设置找到标志为true */
+                break; /* 跳出循环 */
+            } /* 条件判断结束 */
+        } /* 循环结束 */
+        
+        // 如果是新商品，添加到购物车 /* JavaScript单行注释：添加新商品逻辑 */
+        if (!found) { /* 如果没有找到相同商品 */
+            cart.push({ /* 向购物车数组添加新商品对象 */
+                id: id, /* 商品ID */
+                name: name, /* 商品名称 */
+                price: price, /* 商品价格 */
+                category: category, /* 商品分类 */
+                image: image, /* 商品图片路径 */
+                quantity: 1 /* 商品数量，初始为1 */
+            }); /* 添加商品对象结束 */
+        } /* 条件判断结束 */
+        
+        // 保存到本地存储 /* JavaScript单行注释：保存数据到本地存储 */
+        localStorage.setItem('cart', JSON.stringify(cart)); /* 将购物车数据转换为JSON字符串并保存到localStorage */
+        
+        // 更新购物车数量显示 /* JavaScript单行注释：更新界面显示 */
+        updateCartCount(); /* 调用更新购物车数量函数 */
+        
+        // 显示提示 /* JavaScript单行注释：显示操作提示 */
+        showToast('已添加: ' + name); /* 调用显示提示函数，显示添加成功信息 */
+    } /* 添加商品到购物车函数结束 */
+
+    // ===== 更新购物车数量显示 ===== /* JavaScript单行注释：更新购物车数量功能说明 */
+    function updateCartCount() { /* 定义更新购物车数量显示函数 */
+        var cart = JSON.parse(localStorage.getItem('cart')) || []; /* 从localStorage获取购物车数据，如果为空则初始化为空数组 */
+        var total = 0; /* 定义总数量变量，初始值为0 */
+        for (var i = 0; i < cart.length; i++) { /* 遍历购物车中的所有商品 */
+            total = total + cart[i].quantity; /* 累加每个商品的数量到总数量 */
+        } /* 循环结束 */
+        document.getElementById('cart-count').innerText = total; /* 获取购物车数量显示元素并更新其文本内容 */
+    } /* 更新购物车数量显示函数结束 */
+
+    // ===== 显示提示框 ===== /* JavaScript单行注释：显示提示框功能说明 */
+    function showToast(message) { /* 定义显示提示框函数，接收提示信息参数 */
+        var toast = document.createElement('div'); /* 创建一个新的div元素作为提示框 */
+        toast.className = 'toast'; /* 设置提示框的CSS类名 */
+        toast.innerText = '✓ ' + message; /* 设置提示框的文本内容，包含勾号和提示信息 */
+        document.getElementById('toast-container').appendChild(toast); /* 将提示框添加到提示框容器中 */
+        
+        // 3秒后自动消失 /* JavaScript单行注释：设置自动消失逻辑 */
+        setTimeout(function() { /* 设置延时函数，3秒后执行 */
+            toast.remove(); /* 移除提示框元素 */
+        }, 3000); /* 延时3000毫秒（3秒） */
+    } /* 显示提示框函数结束 */
+
+    // ===== 页面加载时更新购物车数量 ===== /* JavaScript单行注释：页面加载事件说明 */
+    window.onload = function() { /* 设置页面加载完成时的事件处理函数 */
+        updateCartCount(); /* 调用更新购物车数量函数 */
+    }; /* 页面加载事件处理函数结束 */
+</script> <!-- JavaScript代码结束 -->
+
+</body> <!-- 页面主体结束 -->
+</html> <!-- HTML文档结束 -->

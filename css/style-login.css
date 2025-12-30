@@ -1,0 +1,78 @@
+/* ============================================
+   style-login.css - 登录页面样式
+   ============================================ */ /* CSS多行注释：文件说明 */
+
+.login-container { /* 登录容器类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    justify-content: center; /* 设置主轴对齐方式为居中 */
+    align-items: center; /* 设置交叉轴对齐方式为居中 */
+    min-height: 70vh; /* 设置最小高度为70%视口高度 */
+    padding: 20px; /* 设置内边距为20像素 */
+} /* 登录容器类样式结束 */
+
+.login-box { /* 登录框类选择器 */
+    background: white; /* 设置背景颜色为白色 */
+    width: 100%; /* 设置宽度为100% */
+    max-width: 400px; /* 设置最大宽度为400像素 */
+    padding: 40px; /* 设置内边距为40像素 */
+    border-radius: 8px; /* 设置圆角半径为8像素 */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* 设置阴影效果 */
+    text-align: center; /* 设置文本居中对齐 */
+    border-top: 3px solid #ff4d4f; /* 设置顶部边框为3像素实线红色 */
+} /* 登录框类样式结束 */
+
+.login-title { /* 登录标题类选择器 */
+    font-size: 24px; /* 设置字体大小为24像素 */
+    margin-bottom: 30px; /* 设置底部外边距为30像素 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+} /* 登录标题类样式结束 */
+
+.form-group { /* 表单组类选择器 */
+    margin-bottom: 20px; /* 设置底部外边距为20像素 */
+    text-align: left; /* 设置文本左对齐 */
+} /* 表单组类样式结束 */
+
+.form-label { /* 表单标签类选择器 */
+    display: block; /* 设置为块级元素 */
+    margin-bottom: 8px; /* 设置底部外边距为8像素 */
+    font-size: 14px; /* 设置字体大小为14像素 */
+    color: #666; /* 设置字体颜色为灰色 */
+} /* 表单标签类样式结束 */
+
+.form-input { /* 表单输入框类选择器 */
+    width: 100%; /* 设置宽度为100% */
+    padding: 12px; /* 设置内边距为12像素 */
+    border: 1px solid #ddd; /* 设置边框为1像素实线浅灰色 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+    font-size: 16px; /* 设置字体大小为16像素 */
+} /* 表单输入框类样式结束 */
+
+.form-input:focus { /* 表单输入框焦点伪类选择器 */
+    outline: none; /* 移除默认的焦点轮廓 */
+    border-color: #ff4d4f; /* 焦点时边框颜色变为红色 */
+} /* 表单输入框焦点样式结束 */
+
+.login-btn { /* 登录按钮类选择器 */
+    width: 100%; /* 设置宽度为100% */
+    padding: 12px; /* 设置内边距为12像素 */
+    background: #ff4d4f; /* 设置背景颜色为红色 */
+    color: white; /* 设置字体颜色为白色 */
+    border: none; /* 移除边框 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+    font-size: 16px; /* 设置字体大小为16像素 */
+    cursor: pointer; /* 设置鼠标指针为手型 */
+} /* 登录按钮类样式结束 */
+
+.login-btn:hover { /* 登录按钮悬停伪类选择器 */
+    background: #ff7a45; /* 悬停时背景颜色变为橙红色 */
+} /* 登录按钮悬停样式结束 */
+
+.login-footer { /* 登录页面底部类选择器 */
+    margin-top: 20px; /* 设置顶部外边距为20像素 */
+    font-size: 14px; /* 设置字体大小为14像素 */
+    color: #888; /* 设置字体颜色为浅灰色 */
+} /* 登录页面底部类样式结束 */
+
+.link { /* 链接类选择器 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+} /* 链接类样式结束 */

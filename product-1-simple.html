@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- HTML5文档类型声明，告诉浏览器这是HTML5文档 -->
+<html lang="zh-CN"> <!-- HTML根元素，lang属性指定页面语言为中文 -->
+<head> <!-- 头部区域，包含页面元数据 -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8，支持中文显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 响应式设计，设置视口宽度等于设备宽度 -->
+    <title>Quantum X 智能手机 | TechNova</title> <!-- 页面标题，显示在浏览器标签页 -->
+    <!-- 引用基础样式 --> <!-- HTML注释：引用基础样式文件说明 -->
+    <link rel="stylesheet" href="css/style-base.css"> <!-- 引用基础样式文件，包含通用样式 -->
+    <!-- 引用商品详情页专属样式 --> <!-- HTML注释：引用商品详情页样式文件说明 -->
+    <link rel="stylesheet" href="css/style-product.css"> <!-- 引用商品详情页专用样式文件 -->
+</head> <!-- 头部区域结束 -->
+<body> <!-- 页面主体开始 -->
+
+<nav class="navbar"> <!-- 导航栏容器，使用navbar样式类 -->
+    <div class="container nav-content"> <!-- 导航内容容器，限制最大宽度并居中 -->
+        <a href="index-simple.html" class="logo">TechNova</a> <!-- 网站Logo链接，点击返回首页 -->
+        <div class="nav-menu"> <!-- 导航菜单容器 -->
+            <a href="index-simple.html">首页</a> <!-- 首页链接 -->
+            <a href="shop-simple.html" class="active">商城</a> <!-- 商城页面链接，active类表示当前页面 -->
+            <a href="about-simple.html">关于我们</a> <!-- 关于我们页面链接 -->
+        </div> <!-- 导航菜单容器结束 -->
+        <div class="nav-right"> <!-- 右侧功能区容器 -->
+            <a href="login-simple.html">登录</a> <!-- 登录页面链接 -->
+            <a href="cart-simple.html"> <!-- 购物车页面链接 -->
+                购物车 <span class="cart-count" id="cart-count">0</span> <!-- 购物车文字和数量显示，ID用于JavaScript更新数量 -->
+            </a> <!-- 购物车链接结束 -->
+        </div> <!-- 右侧功能区容器结束 -->
+    </div> <!-- 导航内容容器结束 -->
+</nav> <!-- 导航栏容器结束 -->
+
+<div class="container"> <!-- 主要内容容器，限制最大宽度并居中 -->
+    <a href="shop-simple.html" class="back-link">← 返回商城</a> <!-- 返回商城链接 -->
+
+    <div class="detail-box"> <!-- 商品详情框容器 -->
+        <div class="detail-left"> <!-- 商品详情左侧区域 -->
+            <video class="detail-video" controls poster="photos/1.jpg"> <!-- HTML5视频元素，显示商品视频，设置封面图片和控制条 -->
+                <source src="videos/1.mp4" type="video/mp4"> <!-- 视频源文件，指定MP4格式 -->
+                您的浏览器不支持视频播放 <!-- 浏览器不支持视频时显示的文字 -->
+            </video> <!-- 视频元素结束 -->
+        </div> <!-- 商品详情左侧区域结束 -->
+        <div class="detail-right"> <!-- 商品详情右侧区域 -->
+            <span class="product-cat">手机</span> <!-- 商品分类标签 -->
+            <h1 class="product-title">Quantum X 智能手机</h1> <!-- 一级标题，商品名称 -->
+            <div class="product-rating">推荐指数：★★★★★ (4.8分)</div> <!-- 商品评分显示 -->
+            <p class="product-desc">搭载量子处理器的下一代智能手机，拥有6.7英寸全面屏、1亿像素摄像头和5000mAh超长续航电池。</p> <!-- 商品描述段落 -->
+            <div class="price-box"> <!-- 价格和按钮区域容器 -->
+                <div class="detail-price">¥5,999</div> <!-- 商品价格显示 -->
+                <button class="btn" onclick="addToCart(1, 'Quantum X 智能手机', 5999, '手机', 'photos/1.jpg')">加入购物车</button> <!-- 加入购物车按钮，点击时调用addToCart函数并传递商品信息 -->
+            </div> <!-- 价格和按钮区域容器结束 -->
+        </div> <!-- 商品详情右侧区域结束 -->
+    </div> <!-- 商品详情框容器结束 -->
+</div> <!-- 主要内容容器结束 -->
+
+<footer class="footer"> <!-- 页脚容器 -->
+    <p>© 2025 TechNova 科技商城</p> <!-- 版权信息文字 -->
+</footer> <!-- 页脚容器结束 -->
+
+<div id="toast-container"></div> <!-- 提示框容器，用于显示操作提示信息，ID用于JavaScript操作 -->
+
+<script> /* JavaScript代码开始 */
+    function addToCart(id, name, price, category, image) { /* 定义添加商品到购物车函数，接收商品信息参数 */
+        var cart = JSON.parse(localStorage.getItem('cart')) || []; /* 从localStorage获取购物车数据，如果为空则初始化为空数组 */
+        var found = false; /* 定义标志变量，用于标记是否找到相同商品 */
+        for (var i = 0; i < cart.length; i++) { /* 遍历购物车中的所有商品 */
+            if (cart[i].id === id) { /* 如果找到相同ID的商品 */
+                cart[i].quantity++; /* 将该商品的数量加1 */
+                found = true; /* 设置找到标志为true */
+                break; /* 跳出循环 */
+            } /* 条件判断结束 */
+        } /* 循环结束 */
+        if (!found) { /* 如果没有找到相同商品 */
+            cart.push({ id: id, name: name, price: price, category: category, image: image, quantity: 1 }); /* 向购物车数组添加新商品对象 */
+        } /* 条件判断结束 */
+        localStorage.setItem('cart', JSON.stringify(cart)); /* 将购物车数据转换为JSON字符串并保存到localStorage */
+        updateCartCount(); /* 调用更新购物车数量函数 */
+        showToast('已添加: ' + name); /* 调用显示提示函数，显示添加成功信息 */
+    } /* 添加商品到购物车函数结束 */
+
+    function updateCartCount() { /* 定义更新购物车数量显示函数 */
+        var cart = JSON.parse(localStorage.getItem('cart')) || []; /* 从localStorage获取购物车数据，如果为空则初始化为空数组 */
+        var total = 0; /* 定义总数量变量，初始值为0 */
+        for (var i = 0; i < cart.length; i++) { total += cart[i].quantity; } /* 遍历购物车并累加每个商品的数量到总数量 */
+        document.getElementById('cart-count').innerText = total; /* 获取购物车数量显示元素并更新其文本内容 */
+    } /* 更新购物车数量显示函数结束 */
+
+    function showToast(msg) { /* 定义显示提示框函数，接收提示信息参数 */
+        var t = document.createElement('div'); t.className = 'toast'; t.innerText = '✓ ' + msg; /* 创建提示框元素并设置样式类和文本内容 */
+        document.getElementById('toast-container').appendChild(t); /* 将提示框添加到提示框容器中 */
+        setTimeout(function() { t.remove(); }, 3000); /* 设置延时函数，3秒后移除提示框 */
+    } /* 显示提示框函数结束 */
+
+    window.onload = updateCartCount; /* 设置页面加载完成时调用更新购物车数量函数 */
+</script> <!-- JavaScript代码结束 -->
+
+</body> <!-- 页面主体结束 -->
+</html> <!-- HTML文档结束 -->

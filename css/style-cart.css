@@ -1,0 +1,121 @@
+/* ============================================
+   style-cart.css - 购物车页面样式
+   ============================================ */ /* CSS多行注释：文件说明 */
+
+.cart-title { /* 购物车标题类选择器 */
+    font-size: 24px; /* 设置字体大小为24像素 */
+    margin: 30px 0 20px; /* 设置外边距上30像素，左右0，下20像素 */
+    padding-bottom: 10px; /* 设置底部内边距为10像素 */
+    border-bottom: 2px solid #ff4d4f; /* 设置底部边框为2像素实线红色 */
+    display: inline-block; /* 设置为行内块元素 */
+} /* 购物车标题类样式结束 */
+
+.cart-table { /* 购物车表格类选择器 */
+    width: 100%; /* 设置宽度为100% */
+    background: white; /* 设置背景颜色为白色 */
+    border-collapse: collapse; /* 设置表格边框合并 */
+} /* 购物车表格类样式结束 */
+
+.cart-table th { /* 购物车表格头部单元格选择器 */
+    background: #f5f5f5; /* 设置背景颜色为浅灰色 */
+    padding: 15px; /* 设置内边距为15像素 */
+    text-align: left; /* 设置文本左对齐 */
+    border-bottom: 2px solid #ff4d4f; /* 设置底部边框为2像素实线红色 */
+} /* 购物车表格头部单元格样式结束 */
+
+.cart-table td { /* 购物车表格数据单元格选择器 */
+    padding: 15px; /* 设置内边距为15像素 */
+    border-bottom: 1px solid #eee; /* 设置底部边框为1像素实线浅灰色 */
+    vertical-align: middle; /* 设置垂直对齐方式为居中 */
+} /* 购物车表格数据单元格样式结束 */
+
+.item-info { /* 商品信息类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    align-items: center; /* 设置交叉轴对齐方式为居中 */
+} /* 商品信息类样式结束 */
+
+.item-img { /* 商品图片类选择器 */
+    width: 60px; /* 设置宽度为60像素 */
+    height: 60px; /* 设置高度为60像素 */
+    object-fit: cover; /* 设置图片填充方式为覆盖，保持比例 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+    margin-right: 15px; /* 设置右外边距为15像素 */
+} /* 商品图片类样式结束 */
+
+.item-name { /* 商品名称类选择器 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+} /* 商品名称类样式结束 */
+
+.item-cat { /* 商品分类类选择器 */
+    color: #888; /* 设置字体颜色为浅灰色 */
+    font-size: 12px; /* 设置字体大小为12像素 */
+} /* 商品分类类样式结束 */
+
+.price-text { /* 价格文字类选择器 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+} /* 价格文字类样式结束 */
+
+/* ----- 数量控制 ----- */ /* CSS多行注释：数量控制样式说明 */
+.qty-control { /* 数量控制类选择器 */
+    display: flex; /* 设置为弹性盒子布局 */
+    align-items: center; /* 设置交叉轴对齐方式为居中 */
+    border: 1px solid #ddd; /* 设置边框为1像素实线浅灰色 */
+    width: fit-content; /* 设置宽度为内容适应 */
+    border-radius: 4px; /* 设置圆角半径为4像素 */
+} /* 数量控制类样式结束 */
+
+.qty-btn { /* 数量按钮类选择器 */
+    padding: 5px 12px; /* 设置内边距上下5像素，左右12像素 */
+    border: none; /* 移除边框 */
+    background: #f5f5f5; /* 设置背景颜色为浅灰色 */
+    cursor: pointer; /* 设置鼠标指针为手型 */
+} /* 数量按钮类样式结束 */
+
+.qty-btn:hover { /* 数量按钮悬停伪类选择器 */
+    background: #ff4d4f; /* 悬停时背景颜色变为红色 */
+    color: white; /* 悬停时字体颜色变为白色 */
+} /* 数量按钮悬停样式结束 */
+
+.qty-num { /* 数量数字类选择器 */
+    padding: 5px 15px; /* 设置内边距上下5像素，左右15像素 */
+    border-left: 1px solid #ddd; /* 设置左边框为1像素实线浅灰色 */
+    border-right: 1px solid #ddd; /* 设置右边框为1像素实线浅灰色 */
+} /* 数量数字类样式结束 */
+
+.del-btn { /* 删除按钮类选择器 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    background: none; /* 设置背景为无 */
+    border: none; /* 移除边框 */
+    cursor: pointer; /* 设置鼠标指针为手型 */
+} /* 删除按钮类样式结束 */
+
+.cart-summary { /* 购物车摘要类选择器 */
+    background: white; /* 设置背景颜色为白色 */
+    padding: 20px; /* 设置内边距为20像素 */
+    margin-top: 20px; /* 设置顶部外边距为20像素 */
+    text-align: right; /* 设置文本右对齐 */
+} /* 购物车摘要类样式结束 */
+
+.total-label { /* 总计标签类选择器 */
+    font-size: 16px; /* 设置字体大小为16像素 */
+} /* 总计标签类样式结束 */
+
+.total-amount { /* 总计金额类选择器 */
+    font-size: 28px; /* 设置字体大小为28像素 */
+    color: #ff4d4f; /* 设置字体颜色为红色 */
+    font-weight: bold; /* 设置字体粗细为粗体 */
+    margin-left: 10px; /* 设置左外边距为10像素 */
+} /* 总计金额类样式结束 */
+
+.empty-state { /* 空状态类选择器 */
+    text-align: center; /* 设置文本居中对齐 */
+    padding: 60px; /* 设置内边距为60像素 */
+    background: white; /* 设置背景颜色为白色 */
+} /* 空状态类样式结束 */
+
+.empty-text { /* 空状态文字类选择器 */
+    font-size: 18px; /* 设置字体大小为18像素 */
+    color: #888; /* 设置字体颜色为浅灰色 */
+    margin-bottom: 20px; /* 设置底部外边距为20像素 */
+} /* 空状态文字类样式结束 */

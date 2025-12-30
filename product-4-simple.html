@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4K 高清相机 | TechNova</title>
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-product.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <a href="index-simple.html" class="logo">TechNova</a>
+        <div class="nav-menu">
+            <a href="index-simple.html">首页</a>
+            <a href="shop-simple.html" class="active">商城</a>
+            <a href="about-simple.html">关于我们</a>
+        </div>
+        <div class="nav-right">
+            <a href="login-simple.html">登录</a>
+            <a href="cart-simple.html">
+                购物车 <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <a href="shop-simple.html" class="back-link">← 返回商城</a>
+
+    <div class="detail-box">
+        <div class="detail-left">
+            <video class="detail-video" controls poster="photos/4.jpg">
+                <source src="videos/4.mp4" type="video/mp4">
+                您的浏览器不支持视频播放
+            </video>
+        </div>
+        <div class="detail-right">
+            <span class="product-cat">摄影</span>
+            <h1 class="product-title">4K 高清相机</h1>
+            <div class="product-rating">推荐指数：★★★★★ (4.8分)</div>
+            <p class="product-desc">专业级4K视频拍摄，4500万像素传感器，支持8K照片拍摄，防抖性能卓越。</p>
+            <div class="price-box">
+                <div class="detail-price">¥8,500</div>
+                <button class="btn" onclick="addToCart(4, '4K 高清相机', 8500, '摄影', 'photos/4.jpg')">加入购物车</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2025 TechNova 科技商城</p>
+</footer>
+
+<div id="toast-container"></div>
+
+<script>
+    function addToCart(id, name, price, category, image) {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var found = false;
+        for (var i = 0; i < cart.length; i++) {
+            if (cart[i].id === id) {
+                cart[i].quantity++;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            cart.push({ id: id, name: name, price: price, category: category, image: image, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        showToast('已添加: ' + name);
+    }
+
+    function updateCartCount() {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var total = 0;
+        for (var i = 0; i < cart.length; i++) { total += cart[i].quantity; }
+        document.getElementById('cart-count').innerText = total;
+    }
+
+    function showToast(msg) {
+        var t = document.createElement('div'); t.className = 'toast'; t.innerText = '✓ ' + msg;
+        document.getElementById('toast-container').appendChild(t);
+        setTimeout(function() { t.remove(); }, 3000);
+    }
+
+    window.onload = updateCartCount;
+</script>
+
+</body>
+</html>
