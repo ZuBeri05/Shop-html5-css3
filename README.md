@@ -209,7 +209,4 @@ var cart = JSON.parse(localStorage.getItem('cart')) || [];
 2. 确保 `videos` 文件夹中有 1.mp4 ~ 6.mp4 视频（可选）
 3. 用浏览器打开 `index-simple.html` 即可
 
----
-
-
-**祝答辩顺利！** 
+ 
